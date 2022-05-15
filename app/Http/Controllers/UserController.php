@@ -3,17 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 
-class UserController extends Controller{
-
-    public  function get_user_posts()
+class UserController extends Controller
+{
+    public function userPosts(): Factory|View|Application
     {
-
         $users = User::active()->get();
-        
-        return view("welcome",compact('users'));
-    }
 
+        return view('welcome', \compact('users'));
+    }
 }
-    

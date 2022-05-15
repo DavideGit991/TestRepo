@@ -4,7 +4,6 @@ use App\Http\Controllers\API\ApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 */
 
-Route::get('/users_posts', [ApiController::class, 'get_user_posts']);
+Route::get('/users_posts', [ApiController::class, 'userPosts']);
