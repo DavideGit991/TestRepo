@@ -3,17 +3,15 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Http\JsonResponse;
 
 class ApiController extends Controller
 {
-    public  function get_user_posts()
+    public function userPosts(): JsonResponse
     {
-        
         $users = User::with('posts')->active()->get();
-    
-        return response()->json($users,201);
+
+        return response()->json($users, 201);
     }
 }
-
